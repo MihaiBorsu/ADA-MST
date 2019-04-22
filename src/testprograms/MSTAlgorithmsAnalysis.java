@@ -37,7 +37,7 @@ public class MSTAlgorithmsAnalysis {
 		UndirectedGraph g=null;
 
 		try {
-			g = new UndirectedGraph("gr_dense_1000.txt");
+			g = new UndirectedGraph("gr_sparse_1000.txt");
 		} catch (IOException e) {
 			System.out.println("IO Exception reading graph data from file");
 			e.printStackTrace();
@@ -52,8 +52,8 @@ public class MSTAlgorithmsAnalysis {
 		theMSTFinder = new PrimMSTFinderWithPriorityQueue();
 		doMST(theMSTFinder, g);
 
-		//theMSTFinder = new KruskalMSTFinder();
-		//doMST(theMSTFinder, g);
+		theMSTFinder = new KruskalMSTFinder();
+		doMST(theMSTFinder, g);
 	}
 
 }
